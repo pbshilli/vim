@@ -163,6 +163,14 @@ if( !exists( "*BlockComment" ) )
 endif
 
 " ----------------------------------------------------------------------------
+" Ctrl-P
+" ----------------------------------------------------------------------------
+let g:ctrlp_map               = '<nop>'
+let g:ctrlp_cmd               = 'CtrlP'
+let g:ctrlp_working_path_mode = 'c'
+noremap <leader>p :CtrlP<CR>
+
+" ----------------------------------------------------------------------------
 " Set DAT files's language to C
 " ----------------------------------------------------------------------------
 au BufNewFile,BufRead *.dat setlocal ft=c
