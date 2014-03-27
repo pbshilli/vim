@@ -132,16 +132,31 @@ set spelllang=en
 " Set up Tablist window and key mapping
 " ----------------------------------------------------------------------------
 let Tlist_WinWidth = 50
+let g:ctags_cmd = "ctags -B --excmd=p"
 noremap <F2> :TlistToggle<cr>
 noremap <F6> :call BuildCTags()<CR>
 
+function BuildCTags()
+    execute "silent !start /MIN cmd /c \"" . g:ctags_cmd .
+          \ " & \"" . $VIMRUNTIME . "\\gvim.exe\" --remote-send "
+          \ "\"<ESC>:echo 'CTags build complete'<CR>\" --servername " . v:servername . "\""
+endfunction
+  
 "-----------------------------------------------------------
-" Grep keys
+" Vimgrep keys
 "-----------------------------------------------------------
-noremap <F3> :call GrepPrompt(1)<CR>
-noremap <S-F3> :call GrepPrompt(0)<CR>
-noremap <F4> :call GrepCurrentFile(1)<CR>
-noremap <S-F4> :call GrepCurrentFile(0)<CR>
+let g:vimgrep_file_set_default = "*.*"
+function VimgrepPrompt()
+    let pattern = input( "Vimgrep Pattern: ", expand( "<cword>" ) )
+    let file_set = input( "File Set: ", g:vimgrep_file_set_default )
+    if( file_set != "" )
+        execute "vimgrep /" . pattern . "/gj " . file_set
+        execute "copen"
+    endif
+endfunction
+
+noremap <F3> :call VimgrepPrompt()<CR>
+noremap <leader>/ :call VimgrepPrompt()<CR>
 
 " ----------------------------------------------------------------------------
 " Map commenting
