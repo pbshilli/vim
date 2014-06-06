@@ -100,15 +100,13 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
 "-----------------------------------------------------------
-" Use ctrl-space for ctrl-n ( autocomplete )
-"-----------------------------------------------------------
-inoremap <C-Space> <C-n>
-
-"-----------------------------------------------------------
 " Use CTRL-N, CTRL-P to cyle through grep results
 "-----------------------------------------------------------
-nnoremap <silent> <C-N> :cn<CR>zv
-nnoremap <silent> <C-P> :cp<CR>zv
+nnoremap <silent> <C-N> :update<CR>:cn<CR>zv
+nnoremap <silent> <C-P> :update<CR>:cp<CR>zv
+
+nnoremap <silent> <leader>n :update<CR>:cn<CR>zv
+nnoremap <silent> <leader>N :update<CR>:cp<CR>zv
 
 "-----------------------------------------------------------
 " Use <leader>w for saving
@@ -122,18 +120,10 @@ vnoremap <leader>w <C-C>:update<CR>
 set listchars=tab:»·,trail:·,eol:$
 noremap <F11> :set list!<CR>
 
-"-----------------------------------------------------------
-" Toggle spell checking on and off with Shift+F11
-"-----------------------------------------------------------
-noremap <S-F11> :set spell!<CR> 
-set spelllang=en
-
 " ----------------------------------------------------------------------------
-" Set up Tablist window and key mapping
+" Ctags
 " ----------------------------------------------------------------------------
-let Tlist_WinWidth = 50
 let g:ctags_cmd = "ctags -B --excmd=p"
-noremap <F2> :TlistToggle<cr>
 noremap <F6> :call BuildCTags()<CR>
 
 function BuildCTags()
@@ -195,34 +185,3 @@ let g:ctrlp_map               = '<nop>'
 let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 'c'
 noremap <leader>p :CtrlP<CR>
-
-" ----------------------------------------------------------------------------
-" Set DAT files's language to C
-" ----------------------------------------------------------------------------
-au BufNewFile,BufRead *.dat setlocal ft=c
-
-" set diffexpr=mydiff()
-" function mydiff()
-"   let opt = '-a --binary '
-"   if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-"   if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-"   let arg1 = v:fname_in
-"   if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-"   let arg2 = v:fname_new
-"   if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-"   let arg3 = v:fname_out
-"   if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-"   let eq = ''
-"   if $vimruntime =~ ' '
-"     if &sh =~ '\<cmd'
-"       let cmd = '""' . $vimruntime . '\diff"'
-"       let eq = '"'
-"     else
-"       let cmd = substitute($vimruntime, ' ', '" ', '') . '\diff"'
-"     endif
-"   else
-"     let cmd = $vimruntime . '\diff'
-"   endif
-"   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-" endfunction
-" 
