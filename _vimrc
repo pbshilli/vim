@@ -100,13 +100,16 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
 "-----------------------------------------------------------
+" Use <leader>bd to delete a buffer without closing the
+" window
+"-----------------------------------------------------------
+nnoremap <silent> <leader>bd :bp\|bd #<CR>
+
+"-----------------------------------------------------------
 " Use CTRL-N, CTRL-P to cyle through grep results
 "-----------------------------------------------------------
 nnoremap <silent> <C-N> :update<CR>:cn<CR>zv
 nnoremap <silent> <C-P> :update<CR>:cp<CR>zv
-
-nnoremap <silent> <leader>n :update<CR>:cn<CR>zv
-nnoremap <silent> <leader>N :update<CR>:cp<CR>zv
 
 "-----------------------------------------------------------
 " Use <leader>w for saving
@@ -185,3 +188,8 @@ let g:ctrlp_map               = '<nop>'
 let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 'c'
 noremap <leader>p :CtrlP<CR>
+
+" ----------------------------------------------------------------------------
+" Jedi-Vim
+" ----------------------------------------------------------------------------
+let g:jedi#use_tabs_not_buffers = 0
