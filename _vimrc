@@ -60,7 +60,17 @@ set lines=50 columns=115 nowrap
 " ----------------------------------------------------------------------------
 " Set tab behavior to always use/expect 4 spaces
 " ----------------------------------------------------------------------------
-set tabstop=4 shiftwidth=4 smarttab expandtab autoindent smartindent
+set tabstop=4 shiftwidth=4 smarttab expandtab autoindent
+
+" ----------------------------------------------------------------------------
+" Set CTRL-A and CTRL-X to only work on decimal and hex numbers
+" ----------------------------------------------------------------------------
+set nrformats="hex"
+
+" ----------------------------------------------------------------------------
+" Set format options to auto-format comments 
+" ----------------------------------------------------------------------------
+set formatoptions="crqaj"
 
 " ----------------------------------------------------------------------------
 " Set key timeout length to 700 milliseconds
@@ -141,10 +151,11 @@ endfunction
 let g:vimgrep_file_set_default = "*.*"
 function VimgrepPrompt()
     let pattern = input( "Vimgrep Pattern: ", expand( "<cword>" ) )
-    let file_set = input( "File Set: ", g:vimgrep_file_set_default )
+    let file_set = input( "File Set: ", g:vimgrep_file_set_default, "file" )
     if( file_set != "" )
-        execute "vimgrep /" . pattern . "/gj " . file_set
-        execute "copen"
+        let vimgrep_cmd = "vimgrep /" . pattern . "/gj " . file_set . " | copen"
+        execute vimgrep_cmd
+        call histadd( "cmd", vimgrep_cmd )
     endif
 endfunction
 
