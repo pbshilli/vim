@@ -1,0 +1,78 @@
+set nocompatible
+
+" ----------------------------------------------------------------------------
+" Don't create a backup file, don't autosave session
+" ----------------------------------------------------------------------------
+set nobackup
+let g:session_autosave = 'no'
+
+" ----------------------------------------------------------------------------
+" Set highlighted, incremental search
+" ----------------------------------------------------------------------------
+set hlsearch incsearch
+
+" ----------------------------------------------------------------------------
+" Set tab behavior to always use/expect 4 spaces
+" ----------------------------------------------------------------------------
+set tabstop=4 shiftwidth=4 smarttab expandtab autoindent
+
+" ----------------------------------------------------------------------------
+" Set CTRL-A and CTRL-X to only work on decimal and hex numbers
+" ----------------------------------------------------------------------------
+set nrformats="hex"
+
+" ----------------------------------------------------------------------------
+" Set format options to auto-format comments 
+" ----------------------------------------------------------------------------
+set formatoptions="crqaj"
+
+" ----------------------------------------------------------------------------
+" Set key timeout length to 700 milliseconds
+" ----------------------------------------------------------------------------
+set timeoutlen=700
+
+" ----------------------------------------------------------------------------
+" Set leader to space
+" ----------------------------------------------------------------------------
+let mapleader = " "
+noremap <space> <NOP>
+
+" ----------------------------------------------------------------------------
+" Break bad habits
+" ----------------------------------------------------------------------------
+noremap <Up>       <NOP>
+noremap <Down>     <NOP>
+noremap <Left>     <NOP>
+noremap <Right>    <NOP>
+noremap <PageUp>   <NOP>
+noremap <PageDown> <NOP>
+noremap <Home>     <NOP>
+noremap <End>      <NOP>
+
+"-----------------------------------------------------------
+" Smooth page up/down scrolling
+"-----------------------------------------------------------
+noremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
+noremap <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+
+"-----------------------------------------------------------
+" Use <leader>w for saving
+"-----------------------------------------------------------
+nnoremap <leader>w :vsc File.SaveSelectedItems<CR>
+vnoremap <leader>w <C-C>:vsc File.SaveSelectedItems<CR>
+
+"-----------------------------------------------------------
+" Use <leader>/ for find in files
+"-----------------------------------------------------------
+noremap <leader>/ :vsc Edit.FindinFiles<CR>
+
+"-----------------------------------------------------------
+" Use vim-style indent rules
+"-----------------------------------------------------------
+set novsvim_useeditorindent
+
+"-----------------------------------------------------------
+" Make gu and gU work
+"-----------------------------------------------------------
+vnoremap gU :vsc Edit.MakeUppercase<CR>
+vnoremap gu :vsc Edit.MakeLowercase<CR>
