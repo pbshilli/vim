@@ -15,17 +15,18 @@ set nobackup
 let g:session_autosave = 'no'
 
 " ----------------------------------------------------------------------------
-" Set up Solarized color scheme for GVIM
+" Set up GVIM
 " ----------------------------------------------------------------------------
 if has("gui_running")
     " ------------------------------------------------------------------------
-    " Set up Solarized color scheme for GVIM
+    " Set the GUI font
     " ------------------------------------------------------------------------
-    let g:solarized_visibility = "high"
-    syntax enable
-    set background=dark
-    colorscheme solarized
     set guifont=Consolas:h10
+
+    " ------------------------------------------------------------------------
+    " Set up the Apprentice color scheme
+    " ------------------------------------------------------------------------
+    colorscheme apprentice
 
     " ------------------------------------------------------------------------
     " Remove menu bar, toolbar, and scroll bars
@@ -35,12 +36,33 @@ if has("gui_running")
     set guioptions-=L
     set guioptions-=r
 
-" ----------------------------------------------------------------------------
-" Set up terminal editor
-" ----------------------------------------------------------------------------
-else
+    " ------------------------------------------------------------------------
+    " Set default window size
+    " ------------------------------------------------------------------------
+    set lines=50 columns=115
 
+" ----------------------------------------------------------------------------
+" Set up terminal VIM in ComEmu
+" ----------------------------------------------------------------------------
+elseif !empty($CONEMUBUILD)
+    " ------------------------------------------------------------------------
+    " Set up 256 color mode
+    " ------------------------------------------------------------------------
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+
+    " ------------------------------------------------------------------------
+    " Set up the Apprentice color scheme
+    " ------------------------------------------------------------------------
+    colorscheme apprentice
 endif
+
+" ----------------------------------------------------------------------------
+" Enable syntax highlighting
+" ----------------------------------------------------------------------------
+syntax enable
 
 " ----------------------------------------------------------------------------
 " Make line numbers, cursor position, and partial commmands visible
@@ -53,9 +75,9 @@ set nu ruler showcmd
 set hlsearch incsearch
 
 " ----------------------------------------------------------------------------
-" Set default window size and disable word line wrapping
+" Disable word line wrapping
 " ----------------------------------------------------------------------------
-set lines=50 columns=115 nowrap
+set nowrap
 
 " ----------------------------------------------------------------------------
 " Set tab behavior to always use/expect 4 spaces

@@ -1,6 +1,3 @@
-[submodule "colors-solarized"]
-	path = colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "pathogen"]
 	path = pathogen
 	url = https://github.com/tpope/vim-pathogen.git
@@ -10,3 +7,6 @@
 [submodule "jedi-vim"]
 	path = jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "apprentice"]
+	path = apprentice
+	url = https://github.com/romainl/Apprentice.git
