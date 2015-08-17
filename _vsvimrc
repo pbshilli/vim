@@ -56,6 +56,14 @@ noremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 noremap <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
 
 "-----------------------------------------------------------
+" Buffer movement
+"-----------------------------------------------------------
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+"-----------------------------------------------------------
 " Use <leader>w for saving
 "-----------------------------------------------------------
 nnoremap <leader>w :vsc File.SaveSelectedItems<CR>
