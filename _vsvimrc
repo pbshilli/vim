@@ -70,6 +70,12 @@ nnoremap <leader>w :vsc File.SaveSelectedItems<CR>
 vnoremap <leader>w <C-C>:vsc File.SaveSelectedItems<CR>
 
 "-----------------------------------------------------------
+" Use <leader>8  and <C-v> for pasting from the clipboard
+"-----------------------------------------------------------
+nnoremap <leader>8 "*p
+vnoremap <leader>8 "*p
+
+"-----------------------------------------------------------
 " Use <leader>/ for find in files
 "-----------------------------------------------------------
 noremap <leader>/ :vsc Edit.FindinFiles<CR>
@@ -84,3 +90,8 @@ set novsvim_useeditorindent
 "-----------------------------------------------------------
 vnoremap gU :vsc Edit.MakeUppercase<CR>
 vnoremap gu :vsc Edit.MakeLowercase<CR>
+
+"-----------------------------------------------------------
+" Make gf work
+"-----------------------------------------------------------
+noremap  gf :vsc Edit.OpenFile<CR>

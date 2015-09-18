@@ -149,6 +149,13 @@ nnoremap <silent> <C-P> :update<CR>:cp<CR>zv
 nnoremap <leader>w :update<CR>
 vnoremap <leader>w <C-C>:update<CR>
 
+"-----------------------------------------------------------
+" Use <leader>8  and <C-v> for pasting from the clipboard
+"-----------------------------------------------------------
+nnoremap <leader>8 "*p
+vnoremap <leader>8 "*p
+inoremap <C-v> <C-R>*
+
 " ----------------------------------------------------------------------------
 " Set whitespace characters and key mapping
 " ----------------------------------------------------------------------------
