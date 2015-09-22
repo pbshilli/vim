@@ -10,3 +10,6 @@
 [submodule "apprentice"]
 	path = apprentice
 	url = https://github.com/romainl/Apprentice.git
+[submodule "nerdtree"]
+	path = nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
