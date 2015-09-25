@@ -24,7 +24,7 @@ set nrformats="hex"
 " ----------------------------------------------------------------------------
 " Set format options to auto-format comments 
 " ----------------------------------------------------------------------------
-set formatoptions="crqaj"
+set formatoptions="crqnj"
 
 " ----------------------------------------------------------------------------
 " Set key timeout length to 700 milliseconds

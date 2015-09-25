@@ -92,7 +92,7 @@ set nrformats="hex"
 " ----------------------------------------------------------------------------
 " Set format options to auto-format comments 
 " ----------------------------------------------------------------------------
-set formatoptions="crqaj"
+set formatoptions=crqnj
 
 " ----------------------------------------------------------------------------
 " Set key timeout length to 700 milliseconds
@@ -243,4 +243,16 @@ let g:jedi#use_tabs_not_buffers = 0
 " NERDTree
 " ----------------------------------------------------------------------------
 noremap <leader>nt :NERDTreeToggle<CR>
+let g:NERDTreeIgnore = ['\.pyc$']
 
+" ----------------------------------------------------------------------------
+" File autocommands
+" ----------------------------------------------------------------------------
+if !exists( "autocommands_loaded" )
+    let autocommands_loaded = 1
+
+    " ------------------------------------------------------------------------
+    " Format git commits for readability
+    " ------------------------------------------------------------------------
+    autocmd FileType gitcommit set textwidth=72 formatoptions+=t
+endif
