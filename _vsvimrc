@@ -100,3 +100,9 @@ vnoremap gu :vsc Edit.MakeLowercase<CR>
 " Make gf work
 "-----------------------------------------------------------
 noremap  gf :vsc Edit.OpenFile<CR>
+
+"-----------------------------------------------------------
+" Use <leader>p for fuzzy searching
+"-----------------------------------------------------------
+noremap <leader>p :vsc Edit.NavigateTo<CR>
+
