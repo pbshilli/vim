@@ -13,3 +13,12 @@
 [submodule "nerdtree"]
 	path = nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "snipmate"]
+	path = snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "tlib"]
+	path = tlib
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim-addon-mw-utils"]
+	path = vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
