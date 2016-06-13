@@ -137,6 +137,14 @@ noremap <C-l> <C-w>l
 nnoremap Y y$
 
 "-----------------------------------------------------------
+" Make an 'inner underscore' movement
+"-----------------------------------------------------------
+nnoremap ci_ T_ct_
+vnoremap i_ T_<C-C>vt_
+nnoremap yi_ T_yt_
+nnoremap di_ F_dt_
+
+"-----------------------------------------------------------
 " Use <leader>bd to delete a buffer without closing the
 " window
 "-----------------------------------------------------------
