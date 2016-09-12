@@ -22,3 +22,6 @@
 [submodule "vim-addon-mw-utils"]
 	path = vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "trace32-practice"]
+	path = trace32-practice
+	url = https://github.com/m42e/trace32-practice.vim.git
