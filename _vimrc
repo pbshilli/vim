@@ -1,12 +1,25 @@
 set nocompatible
 
 "-----------------------------------------------------------
-" Enable pathogen so that plugins can be kept in bundles under
-" one repository
+" Load plugins
 "-----------------------------------------------------------
-runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-call pathogen#helptags()
+call plug#begin('~/vimfiles/plugged')
+
+Plug 'kien/ctrlp.vim'
+
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'davidhalter/jedi-vim'
+
+Plug 'romainl/Apprentice'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'garbas/vim-snipmate'
+
+Plug 'm42e/trace32-practice.vim'
+
+call plug#end()
 
 " ----------------------------------------------------------------------------
 " Don't create a backup file, don't autosave session
