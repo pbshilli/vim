@@ -10,9 +10,7 @@ Installation
 ------------
 * Check out this repository
 * Add the repository path to the PATH environment variable
-* Create a symlink to \_vimrc in $USERPROFILE/
-* If Visual Studio with VsVim is intalled, create a symlink to \_vsvimrc in $USERPROFILE/ and remap CTRL-O, CTRL-I, CTRL-N, CTRL-P, and CTRL-] to the vim-style behavior
-* Run install.ps1
+* Windows: Run install\_windows.ps1
 * Open Vim, run `:PlugInstall` and restart
 
 Jedi Vim Installation
