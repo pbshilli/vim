@@ -10,7 +10,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'davidhalter/jedi-vim'
-
 Plug 'romainl/Apprentice'
 
 Plug 'scrooloose/nerdtree'
@@ -18,6 +17,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'garbas/vim-snipmate'
 
 Plug 'm42e/trace32-practice.vim'
+
+Plug 'thinca/vim-fontzoom'
 
 call plug#end()
 
@@ -259,11 +260,13 @@ noremap <leader>p :CtrlP<CR>
 " Jedi-Vim
 " ----------------------------------------------------------------------------
 let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#show_call_signatures = "2"
 
 " ----------------------------------------------------------------------------
 " NERDTree
 " ----------------------------------------------------------------------------
 noremap <leader>nt :NERDTreeToggle<CR>
+noremap <leader>nf :NERDTreeFind<CR>
 let g:NERDTreeIgnore = ['\.pyc$']
 
 " ----------------------------------------------------------------------------
